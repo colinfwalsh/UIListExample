@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct TextCell: View {
+    let text: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(text)
+            Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundColor(.blue)
+        }
+        .frame(height: 100)
     }
 }
 
 struct TextCell_Previews: PreviewProvider {
     static var previews: some View {
-        TextCell()
+        TextCell(text: "Test")
     }
 }

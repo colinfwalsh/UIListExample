@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		BD041DDE284FE22000770505 /* ios16_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041DDD284FE22000770505 /* ios16_testApp.swift */; };
-		BD041DE0284FE22000770505 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041DDF284FE22000770505 /* ContentView.swift */; };
+		BD041DE0284FE22000770505 /* FizzBuzzContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041DDF284FE22000770505 /* FizzBuzzContent.swift */; };
 		BD041DE2284FE22100770505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD041DE1284FE22100770505 /* Assets.xcassets */; };
 		BD041DE6284FE22100770505 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD041DE5284FE22100770505 /* Preview Assets.xcassets */; };
 		BD041DF0284FE22100770505 /* ios16_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041DEF284FE22100770505 /* ios16_testTests.swift */; };
 		BD041DFA284FE22100770505 /* ios16_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041DF9284FE22100770505 /* ios16_testUITests.swift */; };
 		BD041DFC284FE22100770505 /* ios16_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041DFB284FE22100770505 /* ios16_testUITestsLaunchTests.swift */; };
+		BD041E0F284FEB7400770505 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041E0E284FEB7400770505 /* TextCell.swift */; };
+		BD041E11284FEC2B00770505 /* FizzBuzzDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041E10284FEC2B00770505 /* FizzBuzzDetail.swift */; };
+		BD041E13284FEFC500770505 /* UIList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD041E12284FEFC500770505 /* UIList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		BD041DDA284FE22000770505 /* ios16_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios16_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD041DDD284FE22000770505 /* ios16_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios16_testApp.swift; sourceTree = "<group>"; };
-		BD041DDF284FE22000770505 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BD041DDF284FE22000770505 /* FizzBuzzContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzContent.swift; sourceTree = "<group>"; };
 		BD041DE1284FE22100770505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD041DE3284FE22100770505 /* ios16_test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios16_test.entitlements; sourceTree = "<group>"; };
 		BD041DE5284FE22100770505 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +48,9 @@
 		BD041DF5284FE22100770505 /* ios16_testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios16_testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD041DF9284FE22100770505 /* ios16_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios16_testUITests.swift; sourceTree = "<group>"; };
 		BD041DFB284FE22100770505 /* ios16_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios16_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BD041E0E284FEB7400770505 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		BD041E10284FEC2B00770505 /* FizzBuzzDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzDetail.swift; sourceTree = "<group>"; };
+		BD041E12284FEFC500770505 /* UIList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				BD041DDD284FE22000770505 /* ios16_testApp.swift */,
-				BD041DDF284FE22000770505 /* ContentView.swift */,
+				BD041E152850F08700770505 /* UIKitWrapper */,
+				BD041E142850F06A00770505 /* SwiftUIViews */,
 				BD041DE1284FE22100770505 /* Assets.xcassets */,
 				BD041DE3284FE22100770505 /* ios16_test.entitlements */,
 				BD041DE4284FE22100770505 /* Preview Content */,
@@ -127,6 +134,24 @@
 				BD041DFB284FE22100770505 /* ios16_testUITestsLaunchTests.swift */,
 			);
 			path = ios16_testUITests;
+			sourceTree = "<group>";
+		};
+		BD041E142850F06A00770505 /* SwiftUIViews */ = {
+			isa = PBXGroup;
+			children = (
+				BD041DDF284FE22000770505 /* FizzBuzzContent.swift */,
+				BD041E10284FEC2B00770505 /* FizzBuzzDetail.swift */,
+				BD041E0E284FEB7400770505 /* TextCell.swift */,
+			);
+			path = SwiftUIViews;
+			sourceTree = "<group>";
+		};
+		BD041E152850F08700770505 /* UIKitWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				BD041E12284FEFC500770505 /* UIList.swift */,
+			);
+			path = UIKitWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD041DE0284FE22000770505 /* ContentView.swift in Sources */,
+				BD041E11284FEC2B00770505 /* FizzBuzzDetail.swift in Sources */,
+				BD041E0F284FEB7400770505 /* TextCell.swift in Sources */,
+				BD041DE0284FE22000770505 /* FizzBuzzContent.swift in Sources */,
 				BD041DDE284FE22000770505 /* ios16_testApp.swift in Sources */,
+				BD041E13284FEFC500770505 /* UIList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

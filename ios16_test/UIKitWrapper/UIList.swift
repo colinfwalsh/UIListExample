@@ -12,16 +12,18 @@ struct UIList<Data: Hashable, Row: View>: UIViewRepresentable {
     
     @ViewBuilder
     private let content: (Data) -> Row
-    
     private let data: [Data]
+    
+    private var onPrefetchHandler: ((Int) -> Void)?
     
     init(_ data: [Data], _ content: @escaping (Data) -> Row) {
         self.data = data
         self.content = content
+        self.onPrefetchHandler = nil
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(data, content)
+        Coordinator(data, content, onPrefetchHandler)
     }
     
     func makeUIView(context: Context) -> UITableView {
@@ -43,10 +45,14 @@ struct UIList<Data: Hashable, Row: View>: UIViewRepresentable {
         private let content: (Data) -> Row
         private var data: [Data]
         private var dataSource: UITableViewDiffableDataSource<Int, Data>?
+        private var onPrefetchHandler: ((Int) -> Void)?
         
-        init(_ data: [Data], _ content: @escaping (Data) -> Row) {
+        init(_ data: [Data],
+             _ content: @escaping (Data) -> Row,
+             _ onPrefetchHandler: ((Int) -> Void)?) {
             self.data = data
             self.content = content
+            self.onPrefetchHandler = onPrefetchHandler
         }
         
         func makeDataSource(with tableView: UITableView) {
@@ -77,11 +83,20 @@ struct UIList<Data: Hashable, Row: View>: UIViewRepresentable {
         }
         
         func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+            guard let handler = onPrefetchHandler
+            else { return }
+            
             indexPaths.forEach {
-                let item = data[$0.row]
-                print(item)
+                handler($0.row)
             }
         }
-        
+    }
+}
+
+extension UIList {
+    func onPrefetch(_ handler: @escaping (Int) -> Void) -> UIList {
+        var new = self
+        new.onPrefetchHandler = handler
+        return new
     }
 }

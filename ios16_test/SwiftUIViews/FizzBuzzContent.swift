@@ -21,16 +21,19 @@ struct ContentView: View {
         }
     }
     
-    
     var body: some View {
         NavigationView {
             VStack {
-                GenericList(Array(0..<1000)) { item in
+                UIList(Array(0..<1000)) { item in
                     NavigationLink(destination: FizzBuzzDetail(index: item, text: makeText(with: item))) {
                         TextCell(text: makeText(with: item))
                     }
                 }
+                .onPrefetch { row in
+                    print(row)
+                }
                 .foregroundColor(.black)
+                
             }
             .navigationTitle("FizzBuzz")
         }
